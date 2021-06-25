@@ -26,7 +26,7 @@ The same applies to addons: you can always install the addons **after** the gret
 ## Get the source code
 You can choose between the following two options:
 
-### Get the **latest stable version**...
+### Get the **latest stable release**...
 ... source code [from here](https://sourceforge.net/projects/gretl/files/gretl/). Enter the latest stable version and download the correspondoing `*.tar.xz` file. Extract the tarball and proceed with the installation step below.
 
 ### Get the **latest version in progress**...
@@ -93,7 +93,30 @@ The next step is to compile and install gretl. The following steps show on how t
 
 However, keep in mind that **you don't necessarily have to compile PDF docs on your own**: you can always download them [here](https://sourceforge.net/projects/gretl/files/manual/gretl-guide-a4.pdf/download).
 
-### 'By hand'
+### Using the *latest stable release*
+Make sure you are in the directory `$HOME/git/gretl-git` (or named similarly) and execute the following steps:
+
+```bash
+mkdir build    # create a build directory
+cd build       # switch to the directory
+
+# Configure
+.././configure --enable-quiet-build
+
+# Compile
+make -j"$(nproc)"     # This will make use of all available CPU cores
+
+sudo make install     # Install gretl
+
+make clean
+sudo ldconfig
+
+# Remove build directory
+cd ..
+rm -rf ./build
+```
+
+### Using the *bleeding-edge* version 
 Make sure you are in the directory `$HOME/git/gretl-git` and execute the following steps:
 
 ```bash
