@@ -25,13 +25,11 @@ gcc \
   libgmp-dev \
   libcurl4-gnutls-dev \
   libmpfr-dev \
-  git \
   gnuplot \
   libjson-glib-1.0-0 \
   libjson-glib-dev \
   openmpi-bin \
   openmpi-common \
-  nano \
   ca-certificates \
   libgtk-3-dev \
   libgtksourceview-3.0-dev \
