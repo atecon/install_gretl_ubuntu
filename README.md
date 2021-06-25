@@ -19,8 +19,8 @@ You can choose between the following two options:
 ### Get the **latest stable version**...
 ... source code [from here](https://sourceforge.net/projects/gretl/files/gretl/). Enter the latest stable version and download the correspondoing `*.tar.xz` file. Extract the tarball and proceed with the installation step. 
 
-### Get the **latest version**...
-... in progress via git. In order to clone the gretl git repository, switch via the `cd` command to some folder where you manage git repos. For the following, I assume the directory is `$HOME/git`. Make sure 'git' is installed on your machine. If not so, run `sudo apt install git -y` in the terminal.
+### Get the **latest version in progress**...
+... via git. This approach uses the **bleeding-edge (probably unstable!)** latest state in development. In order to clone the gretl git repository, switch via the `cd` command to some folder where you manage git repos. For the following, I assume the directory is `$HOME/git`. Make sure 'git' is installed on your machine. If not so, run `sudo apt install git -y` in the terminal.
 
 Clone the offocial gretl repository:
 ```bash
