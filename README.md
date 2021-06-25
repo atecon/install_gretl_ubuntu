@@ -11,13 +11,23 @@ This git repository includes:
 While the official gretl manual includes a chapter on how to compile gretl, the list of required packages is either outdated or does not work on recent Ubuntu versions.
 
 
+## A note
+The following steps show you how to compile
+1. the gretl program,
+2. the PDF manual using the Tex apparatus, and
+3. install the gretl add-ons automatically for you. 
+
+However, the PDF manual can always be downloaded from [here](https://sourceforge.net/projects/gretl/files/manual/gretl-guide-a4.pdf/download), and there is not need to compile gretl to obtain it.
+
+The same applies to addons: you can always install the addons **after** the gretl installation or obtain them from [here](http://gretl.sourceforge.net/addons-data/addons.xml). See the manual for details.
+
 # Steps
 
 ## Get the source code
 You can choose between the following two options:
 
 ### Get the **latest stable version**...
-... source code [from here](https://sourceforge.net/projects/gretl/files/gretl/). Enter the latest stable version and download the correspondoing `*.tar.xz` file. Extract the tarball and proceed with the installation step below. 
+... source code [from here](https://sourceforge.net/projects/gretl/files/gretl/). Enter the latest stable version and download the correspondoing `*.tar.xz` file. Extract the tarball and proceed with the installation step below.
 
 ### Get the **latest version in progress**...
 ... via the version control tool "git". This approach uses the **bleeding-edge (probably unstable!)** latest state in progress. In order to clone the gretl git repository, switch via the `cd` command to some folder where you manage git repos. For the following, I assume the directory is `$HOME/git`. Make sure 'git' is installed on your machine. If not so, run `sudo apt install git -y` in the terminal.
@@ -32,7 +42,8 @@ The last command will download the source code and put it to the directory `$HOM
 
 ## Install all necessary packages
 ### 'Manual' way
-Execute the following command in your terminal:
+Execute the following command in your terminal to install all packages to compile gretl as well as the PDF documentation:
+
 ```bash
 sudo apt install -y \
   gcc \
@@ -72,11 +83,15 @@ sudo apt install -y \
   texlive-latex-extra
 ```
 
+You may discard installing the package `texlive-latex-extra` in case you don't want to compile the PDF doc on youself.
+
 ### Use the shell script
 Assuming, you know how to use shell scripts, [simply execute this one.](https://raw.githubusercontent.com/atecon/install_gretl_ubuntu/main/scripts/install_packages.sh)
 
 ## Compile and install gretl
-The next step is to compile and install gretl. 
+The next step is to compile and install gretl. The following steps show on how to compile the program as well as the latest PDF docs. 
+
+However, keep in mind that **you don't necessarily have to compile PDF docs on your own**: you can always download them [here](https://sourceforge.net/projects/gretl/files/manual/gretl-guide-a4.pdf/download).
 
 ### 'By hand'
 Make sure you are in the directory `$HOME/git/gretl-git` and execute the following steps:
@@ -95,10 +110,10 @@ cd build       # switch to the directory
 
 # Compile
 make -j"$(nproc)"     # This will make use of all available CPU cores
-sudo make pdfdocs     # Compile the PDF manual(s)
+sudo make pdfdocs     # Compile the PDF manual(s)  (optional)
 
 sudo make install     # Install gretl
-sudo make install-doc # Install the documentation
+sudo make install-doc # Install the PDF documentation (optional)
 
 make clean
 sudo ldconfig
@@ -108,8 +123,13 @@ cd ..
 rm -rf ./build
 ```
 
+The meaning of the options for the `configure`command are:
+1. `--enable-build-doc` (optional): Create the command and function references.
+2. `--enable-build-addons` (optional): Install all pre-shipped addons automatically.
+3. `--enable-quiet-build` (optional): Minimize the print-out during compilation.
+
 ### By means of a shell-script
-Alternatively, [execute this shell script](https://raw.githubusercontent.com/atecon/install_gretl_ubuntu/main/scripts/install_packages.sh).
+Alternatively, [execute this shell script](https://raw.githubusercontent.com/atecon/install_gretl_ubuntu/main/scripts/install_packages.sh) to do all the previous stepsfor you automatically.
 
 ## Check
 To make sure you've installed gretl properly, open it or check for the installed version by:
