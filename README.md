@@ -17,18 +17,18 @@ While the official gretl manual includes a chapter on how to compile gretl, the 
 You can choose between the following two options:
 
 ### Get the **latest stable version**...
-... source code [from here](https://sourceforge.net/projects/gretl/files/gretl/). Enter the latest stable version and download the correspondoing `*.tar.xz` file. Extract the tarball and proceed with the installation step. 
+... source code [from here](https://sourceforge.net/projects/gretl/files/gretl/). Enter the latest stable version and download the correspondoing `*.tar.xz` file. Extract the tarball and proceed with the installation step below. 
 
 ### Get the **latest version in progress**...
-... via git. This approach uses the **bleeding-edge (probably unstable!)** latest state in development. In order to clone the gretl git repository, switch via the `cd` command to some folder where you manage git repos. For the following, I assume the directory is `$HOME/git`. Make sure 'git' is installed on your machine. If not so, run `sudo apt install git -y` in the terminal.
+... via the version control tool "git". This approach uses the **bleeding-edge (probably unstable!)** latest state in progress. In order to clone the gretl git repository, switch via the `cd` command to some folder where you manage git repos. For the following, I assume the directory is `$HOME/git`. Make sure 'git' is installed on your machine. If not so, run `sudo apt install git -y` in the terminal.
 
 Clone the offocial gretl repository:
 ```bash
 cd $HOME/git
 git clone git://git.code.sf.net/p/gretl/git gretl-git
 ```
-
 The last command will download the source code and put it to the directory `$HOME/git/grelt-git`.
+
 
 ## Install all necessary packages
 ### 'Manual' way
