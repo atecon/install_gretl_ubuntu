@@ -51,7 +51,7 @@ sudo apt install -y \
   texlive-latex-extra
 
 
-if [ "$?" -ne 0 ] ]
+if [ "$?" -ne 0 ]
 then
      echo "ERROR: Failed to install packages."
      exit 1
