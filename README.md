@@ -1,5 +1,9 @@
-# How-to install and compile gretl on Ubuntu
-This repository includes:
+# How to compile gretl on Ubuntu
+I write these words at the end of June 2021 and the current stable version is 2021b while 2021c is in progress and will appear soon. The Ubuntu 21.04 repository currently ships the gretl version 2021a which was officially published in January 2021. You simply install it via the `sudo apt install gretl` command -- and yes, that's it ;-)
+
+However, in case you would like to use all the hot-damn features of the latest gretl version available ([monitor the changelog](http://gretl.sourceforge.net/ChangeLog.html)), as a Linux user you currently need to compile it on your own. Hopefully, this manual shows you that this is not too tricky to do ;-)
+
+This git repository includes:
 
 1. [a script installing all necessary packages for compiling gretl on an Ubuntu machine (tested on Ubuntu 20.04)](https://raw.githubusercontent.com/atecon/install_gretl_ubuntu/main/scripts/install_packages.sh), and
 3. [a script for the actual compilation and installation of gretl](https://raw.githubusercontent.com/atecon/install_gretl_ubuntu/main/scripts/install_packages.sh).
@@ -32,17 +36,12 @@ sudo apt install -y \
   g++-9 \
   autoconf \
   automake \
-  cmake \
   build-essential \
   libtool \
-  flex \
-  bison \
-  gcc-doc \
   libc6-dev \
   gfortran \
   gettext \
   libglib2.0-dev \
-  libgtk3-perl \
   libgfs-dev \
   libpng-dev \
   libxslt1-dev \
@@ -57,7 +56,6 @@ sudo apt install -y \
   libmpfr-dev \
   git \
   gnuplot \
-  imagemagick \
   libjson-glib-1.0-0 \
   libjson-glib-dev \
   openmpi-bin \
