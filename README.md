@@ -1,8 +1,8 @@
 # How-to install and compile gretl on Ubuntu
 This repository includes:
 
-1. a script installing all necessary packages for compiling gretl on an Ubuntu machine (tested on Ubuntu 20.04), and
-3. a script for the actual compilation.
+1. [a script installing all necessary packages for compiling gretl on an Ubuntu machine (tested on Ubuntu 20.04)](https://raw.githubusercontent.com/atecon/install_gretl_ubuntu/main/scripts/install_packages.sh), and
+3. [a script for the actual compilation and installation of gretl](https://raw.githubusercontent.com/atecon/install_gretl_ubuntu/main/scripts/install_packages.sh).
 
 While the official gretl manual includes a chapter on how to compile gretl, the list of required packages is either outdated or does not work on recent Ubuntu versions.
 
@@ -11,6 +11,8 @@ While the official gretl manual includes a chapter on how to compile gretl, the 
 
 ## Clone the gretl git repository.
 Switch via the `cd` command to some folder where you manage git repos. For the following, I assume the directory is `$HOME/git`.
+
+First, make sure 'git' is installed on your machine. If not so, run `sudo apt install git -y` in the terminal.
 
 Clone the offocial gretl repository:
 ```bash
@@ -21,9 +23,8 @@ git clone git://git.code.sf.net/p/gretl/git gretl-git
 The last command will download the source code and put it to the directory `$HOME/git/grelt-git`.
 
 ## Install all necessary packages
-You can either download and execute the following shell-script: XXX
-
-or simply execute the following command in your terminal:
+### 'Manual' way
+Execute the following command in your terminal:
 ```bash
 sudo apt install -y \
   gcc \
@@ -69,9 +70,13 @@ sudo apt install -y \
   texlive-latex-extra
 ```
 
+### Use the shell script
+Assuming, you know how to use shell scripts, [simply execute this one.](https://raw.githubusercontent.com/atecon/install_gretl_ubuntu/main/scripts/install_packages.sh)
+
 ## Compile and install gretl
 The next step is to compile and install gretl. 
 
+### 'By hand'
 Make sure you are in the directory `$HOME/git/gretl-git` and execute the following steps:
 
 ```bash
@@ -100,6 +105,9 @@ sudo ldconfig
 cd ..
 rm -rf ./build
 ```
+
+### By means of a shell-script
+Alternatively, [execute this shell script](https://raw.githubusercontent.com/atecon/install_gretl_ubuntu/main/scripts/install_packages.sh).
 
 ## Check
 To make sure you've installed gretl properly, open it or check for the installed version by:
