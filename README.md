@@ -49,15 +49,10 @@ sudo apt install -y \
   gcc \
   g++ \
   g++-9 \
-  autoconf \
-  automake \
   build-essential \
-  libtool \
   libc6-dev \
-  gfortran \
   gettext \
   libglib2.0-dev \
-  libgfs-dev \
   libpng-dev \
   libxslt1-dev \
   liblapack-dev \
