@@ -13,17 +13,12 @@ sudo apt install -y \
   g++-9 \
   autoconf \
   automake \
-  cmake \
   build-essential \
   libtool \
-  flex \
-  bison \
-  gcc-doc \
   libc6-dev \
   gfortran \
   gettext \
   libglib2.0-dev \
-  libgtk3-perl \
   libgfs-dev \
   libpng-dev \
   libxslt1-dev \
@@ -38,7 +33,6 @@ sudo apt install -y \
   libmpfr-dev \
   git \
   gnuplot \
-  imagemagick \
   libjson-glib-1.0-0 \
   libjson-glib-dev \
   openmpi-bin \
