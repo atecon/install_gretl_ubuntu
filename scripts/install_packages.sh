@@ -7,6 +7,7 @@ sudo apt update
 #sudo apt upgrade -y
 
 echo "Install required packages for compiling gretl"
+sudo apt install -y \
 gcc \
   g++ \
   g++-9 \
